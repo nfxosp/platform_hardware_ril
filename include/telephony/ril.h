@@ -1567,6 +1567,28 @@ typedef struct {
  */
 
 #define RIL_REQUEST_ENTER_NETWORK_DEPERSONALIZATION 8
+    
+/**
+ * RIL_REQUEST_ENTER_DEPERSONALIZATION_CODE
+ *
+ * Requests that personlization be deactivated
+ *
+ * "data" is const char **
+ * ((const char **)(data))[0]] is depersonlization code
+ *
+ * "response" is int *
+ * ((int *)response)[0] is the number of retries remaining, or -1 if unknown
+ *
+ * Valid errors:
+ *
+ *  SUCCESS
+ *  RADIO_NOT_AVAILABLE (radio resetting)
+ *  GENERIC_FAILURE
+ *  PASSWORD_INCORRECT
+ *     (code is invalid)
+ */
+
+#define RIL_REQUEST_ENTER_DEPERSONALIZATION_CODE 8
 
 /**
  * RIL_REQUEST_GET_CURRENT_CALLS
